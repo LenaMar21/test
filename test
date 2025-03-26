@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatislav Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Chatislav Demo</h1>
+    <p>Kliknite na ikonicu chatbota u donjem desnom uglu da započnete razgovor.</p>
+  </div>
+
+  <!-- Chatislav Embed Code -->
+  <script>
+    (function (w, d, o, f) {
+      w[o] =
+        w[o] ||
+        function (config) {
+          var js = d.createElement("script");
+          js.src = f;
+          js.async = true;
+          js.onload = function () {
+            var e = d.createElement("div");
+            e.id = o;
+            d.body.appendChild(e);
+            w.init_chatislav
+              ? w.init_chatislav(o, config)
+              : console.error("chatislav init function not available.");
+          };
+          d.body.appendChild(js);
+        };
+    })(window, document, "ctslv_bbl", "https://chatislav.ai/api/static/chat-bot/index.js");
+    ctslv_bbl({ base_url: "https://chatislav.ai/api", token: "399689c2-70de-4375-9ecb-9ac1d34b6c76" });
+  </script>
+</body>
+</html>
